@@ -1,0 +1,152 @@
+﻿@model IEnumerable<proyecto.Models.Cursos2>
+
+@{
+    ViewBag.Title = "SabanasNotas";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sabana de notas</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__encabezado-pie-pagina-sabanas-administrativos.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color: #eeebdd">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Bienvenido a las sabanas de Notas<br>
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+
+    <!-- FILTROS DE LAS SABANAS -->
+    <div class="filtros">
+        <!--<div class="filtros__busqueda">
+            <input type="text" name="buscar" placeholder="Buscar" id="buscar" >
+        </div>-->
+        <!-- FILTROS DE LAS MATERIAS -->
+        @{var z = 0; }
+        <nav class="filtros__sabanas" onclick="mostrarSubmenu()">
+            <ul class="menu">
+                <li class="sabanas" id="sabanas">
+                    Materias
+                </li>
+                <ul class="submenu" id="submenu">
+
+                    @foreach (var item in Model)
+                    {
+                        z++;
+
+                        if (item.NombreMateria == "Matemáticas" && z < 2)
+                        {
+                            <li class="sabana-de-notas-uno">
+                                <a href="/Admin/NotasEstudiantes">
+                                    1234567
+                                    @item.NombreMateria
+                                    @item.NombreCurso
+                                </a>
+
+                                <input type="hidden" name="name" value="@item.NombreCurso" />
+                            </li>
+                        }
+
+
+                    }
+                </ul>
+            </ul>
+        </nav>
+    </div>
+
+
+
+    <!-- MOSTRAR SUBMENU -->
+    <script type="text/javascript">
+        var contador = 1;
+        var contadorS = 1;
+        var contadorM = 1;
+        var submenuSabanas = document.getElementById("submenuSabanas");
+        var submenuMaterias = document.getElementById("submenuMaterias");
+        var submenu = document.getElementById("submenu");
+        var Sabanas2 = document.getElementById("sabanas2");
+        var Sabanas1 = document.getElementById("sabanas1");
+        function mostrarSubmenu() {
+
+            contador++;
+            let y = contador % 2;
+            if (y != 0) {
+                //Ocultar submenu
+                submenu.style.visibility = 'hidden';
+                submenu.style.opacity = 0;
+            }
+            else {
+                //Mostrar submenu
+                submenu.style.visibility = 'visible';
+                submenu.style.opacity = 1;
+            }
+
+        }
+        function mostrarSubmenuMaterias() {
+            contadorM++;
+            //Ocultar submenu
+            contadorS = 1;
+
+            let y = contadorM % 2;
+            if (y != 0) {
+                //Ocultar submenu
+                submenuMaterias.style.visibility = 'hidden';
+                submenuMaterias.style.opacity = 0;
+            }
+            else {
+                //Mostrar submenu
+                submenuMaterias.style.visibility = 'visible';
+                submenuMaterias.style.opacity = 1;
+            }
+        }
+        function mostrarSabana1() {
+            /*Sabanas2.style.visibility = 'hidden';
+            Sabanas2.style.opacity = 0;
+            Sabanas1.style.visibility = 'visible';
+            Sabanas1.style.opacity = 1;
+        */
+
+        }
+        function mostrarSabana2() {
+            /*Sabanas1.style.visibility = 'hidden';
+            Sabanas1.style.opacity = 0;
+            Sabanas2.style.visibility = 'visible';
+            Sabanas2.style.opacity = 1;
+            */
+        }
+    </script>
+
+
+    <div class="espacio">
+        <div class="contenedor-boton">
+            <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+                <div class="boton-cerrar-sesion">
+                    <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                </div>
+            </a>
+            <a class="boton-volver" href="/Admin/Index" style="text-decoration-line: none;">
+                <div class="fas fa-arrow-left fa-2x"></div>
+            </a>
+            
+            
+        </div>
+    </div>
+    <div class="espacio-final"></div>
+</body>
+</html>
+

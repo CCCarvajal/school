@@ -1,0 +1,120 @@
+/*ESTILO ENCABEZADO DE PÁGINA*/
+.parte-superior {
+    position: relative;
+    margin: 50px 100px 0;
+    height: 146px; /*317px*/
+}
+
+.parte-superior__logo-colegio {
+    float: left;
+    height: 136px;
+    width: 136px;
+    margin-top: -70px;
+    background-color: indianred;
+    border-radius: 10px;
+}
+
+.parte-superior__titulos {
+    height: 146px;
+    color: #1b1717;
+    text-align: center;
+    margin-left: 86px;
+    padding-left: 200px;
+    font-size: 33px;
+    font-weight: 600;
+    padding-top: 0px;
+}
+
+.titulos {
+    height: auto;
+    width: 320px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 0;
+    margin-top: -70px;
+}
+
+.titulos__1 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.titulos__1--active {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+/*DISEÑO DE LAS ESTACIONES Y SU CONTENIDO*/
+.grados{
+	margin:  25px 50px;
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content: space-around;
+}
+.grados__cuadro{
+	position: relative;
+	background:none;
+	margin-top: 38px;
+	margin-bottom: 90px;
+	margin-left: 40px;
+	margin-right: 40px;	
+	padding-top: 10px;
+	height: 150px;
+	width: 150px;
+	border-radius: 16px;
+	display: inline-block;
+	color: #630000;
+	
+}
+.grados__cuadro__num-grado{
+	position: relative;
+	background-color: #FFFFFF;
+	height: auto;
+	width: 230px;
+	color: #1b1717;
+	bottom: 0;
+	border: 2px solid #810000;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 600;
+	margin-top: -40px;
+	margin-left: -20px;
+	padding-top: 1.75px;
+	cursor: pointer;
+
+}
+ 
+/*ESTILO BOTONES FINALES*/
+.contenedor-boton{
+	margin: 131px auto 44px;
+	width: 347px;
+	height: 7px;
+}
+.boton-cerrar-sesion{
+	margin-top: -100px;
+	background-color: #810000;
+	width: 87px;
+	height: 87px;
+	color: #FFFFFF;
+	box-shadow: 0px 3px 6px #00000029;
+	border-radius: 100%;
+	text-align: center;
+	padding-top: 15.75px;
+	padding-left: 10px;
+	cursor: pointer;
+	position: fixed;
+	bottom: 10px;
+	left: 40px;
+}
+.boton-cerrar-sesion:hover{
+  background-color: #630000;
+  color: white;
+}
+.boton-cerrar-sesion__link{
+	font-size: 28px;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;	
+}

@@ -1,0 +1,202 @@
+﻿@model IEnumerable<proyecto.Models.CursosModels> 
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asignación de clases</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__asignacion-de-materias.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Asignar Materias
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+    <!--<?php
+    $registro = controladorFormularios::controladorRegistroCursoMateriaDocente();
+    if ($registro=="ok") {
+    echo '
+    <script>
+            if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+            }
+    </script>';
+    echo '<div class="datos-texto alert alert-success alert-dismissible fade show" role="alert">
+        <strong>¡SE HA REALIZADO EL REGISTRO!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }else if($registro=="errorUnion"){
+    echo '
+    <script>
+            if(window.history.replaceState){
+            window.history.replaceState(null, null, window.location.href);
+            }
+    </script>';
+    echo '<div class="datos-texto alert alert-success alert-danger fade show" role="alert">
+        <strong>¡EL DOCUMENTO NO ESTA REGISTRADO!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }elseif($registro=="errorRegistro"){
+    echo '
+    <script>
+            if(window.history.replaceState){
+            window.history.replaceState(null, null, window.location.href);
+            }
+    </script>';
+    echo '<div class="datos-texto alert alert-success alert-danger fade show" role="alert">
+        <strong>¡LOS REGISTROS YA FUERON REALIZADOS!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    ?>
+    -->
+    <div class="datos-texto">
+        ASIGNACION ÁREAS DOCENTES:
+
+
+
+        <!--INTRODUCEN LOS DATOS-->
+        <form class="datos-columnas" method="post" action="/Admin/Asignar">
+            <div class="columnas">
+                <div class="grupo">
+                    <input class="filas" type="text" name="DocumentoDocente" required>
+                    <label>DOCUMENTO DOCENTE:</label>
+                </div>
+            </div>
+            <div class="columnas">
+                <div class="grupo">
+                    <select class="filas" name="NombreMateria">
+
+                        @{
+                            int contador1 = 1, contador2 = 1, contador3 = 1;
+                            int y = 0, contador4 = 1, z = 0;
+
+                        }
+                        @foreach (var item in Model)
+                        {
+
+
+                            if (contador1 < 11)
+                            {
+
+                                <option>@item.NombreMateria </option>
+                                contador1++;
+                            }
+                            contador4++;
+
+                        }
+                    </select>
+
+                    <input type="hidden" name="IDCurso" value="@contador4" />
+                    @foreach (var item in Model)
+                    {
+
+
+                    }
+
+                    <label>ÁREA:</label>
+                </div>
+            </div>
+            <div class="columnas">
+                <div class="grupo">
+                    <select class="filas" name="NombreCurso">
+                        @foreach (var item in Model)
+                        {
+                            if (contador2 < 11)
+                            {
+                        <option id="option" >@item.NombreCurso </option>
+
+                                contador2++;
+                            }
+
+                        }
+                    </select>
+                    <label>CURSO</label>
+                </div>
+                
+            </div>
+            <input id="boton-registrar" type="submit" name="registrar" value="REGISTRAR">
+        </form>
+    </div>
+
+
+    <div class="datos-texto-tabla table-responsive">
+        <table class="table table-striped table-bordered border-danger">
+            <thead>
+                <tr class="table-danger" content align="center">
+                    <th class="text-center" colspan="5">ASIGNATURAS Y CURSOS</th>
+                </tr>
+                <tr class="table-danger">
+                    <th>#</th>
+                    <th>Documento Docente</th>
+                    <th>Curso</th>
+                    <th>Área</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                contador3++;
+                if (contador3 > 11)
+                {
+                    y++;
+                    <tbody content align="center">
+                        <tr class="align-middle">
+                            <td>@y</td>
+                            <td>@item.DocumentoDocente</td>
+                            <td>@item.NombreCurso</td>
+                            <td>@item.NombreMateria</td>
+                            <td>
+                                @{
+                                    var x = y + 11;
+                                }
+
+                                <div>
+                                    <div content align="center">
+                                        <a type="submit" href="/Admin/Eliminar/@x" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                    </tbody>
+                }
+
+            }
+        </table>
+    </div>
+ 
+
+        <!--BOTONES FINALES-->
+        <footer>
+            <div class="espacio">
+                <div class="contenedor-boton">
+                    <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+                        <div class="boton-cerrar-sesion">
+                            <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                        </div>
+                    </a>
+                    <a class="boton-volver fas fa-arrow-alt-left" href="/Admin/CrearDocenteInicio" style="text-decoration-line: none;">
+                        <div class="fas fa-arrow-left fa-2x"></div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+
+    </body>
+</html>

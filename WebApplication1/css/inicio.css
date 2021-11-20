@@ -1,0 +1,116 @@
+﻿* {
+    font-family: 'Poppins', sans-serif;
+    outline:none;
+}
+.inicio {
+    background-color: #eeebdd;
+    display: flex;
+    justify-content: space-around;
+}
+/*Diseño del contenedor principal*/
+.contenedor {
+    width: 700px;
+    margin-left: 80px;
+    margin-right: 40px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-color: #eeebdd;
+    border: 3px solid #1e212d;
+    border-radius: 16px;
+}
+/*Diseño del logo del colegio*/
+.logo-colegio {
+    position:absolute;
+    background-color: #b68973;
+    margin-left: 380px;
+    margin-top:80px;
+    height: 217px; /*317px*/
+    width: 217px;
+    float:right;
+    border-radius: 13px;
+}
+.logo-colegio img {
+    height: 317px; /*29.351vh*/
+    width: 317px; /*16.51vw*/
+}
+/*Diseño del nombre del colegio*/
+.titulos {
+    //background-color: red;
+    height: auto;
+    text-align: center;
+}
+
+.titulos__1 {
+    //background-color: blue;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.titulos__1--active {
+    font-size: 38px;
+    font-weight: 600;
+}
+/*Diseño del formulario*/
+.formulario {
+    //background-color: green;
+    margin: 54px auto 0;
+    width: 100%;
+}
+
+.formulario__controls {
+    margin: 0 0 28px;
+    font-size: 25px;
+    text-align: center;
+    width: 694px;
+    margin-left:2%;
+    height: 87px;
+    margin-left: 10px;;
+    border: 3px solid #b68973;
+    border-radius: 16px;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+ 
+}
+.grupo{
+    position:relative;
+    width:100%;
+}
+label {
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    font-size: 18px;
+    color:lightslategrey;
+    transition: .4s ease-in-out all;
+}
+input:focus ~ label{
+    margin-top:-10px;
+    padding-left:34px;
+    font-size: 28px;
+    font-weight:700;
+    color:black;
+
+}
+/*Diseño del boton del formulario*/
+.formulario__boton {
+    background-color: #810000;
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: 600;
+    width: 50%;
+    height: 87px;
+    border-radius: 16px;
+    border: 3px solid #1e212d;
+    box-shadow: 0px 3px 6px #00000029;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-left: 25%;
+    margin-bottom: 40px;
+}
+    .formulario__boton:hover {
+        background-color: #630000;
+        font-size: 38px;
+        border: 3px solid #b68973;
+    }
+
+

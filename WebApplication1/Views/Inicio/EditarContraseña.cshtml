@@ -1,0 +1,50 @@
+﻿@model IEnumerable<proyecto.Models.registroAdministrador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/css/inicio.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio</title>
+</head>
+<body class="inicio">
+    <div class="inicio">
+        <!--ENCABEZADO DE PÁGINA-->
+        <div class="contenedor">
+            <div class="logo-colegio" style="margin-top:160px;">
+                <!--LOGO DEL COLEGIO-->
+            </div>
+            <!--FORMULARIO-->
+            <div style="font-size:30px; color:#810000; font-weight:600; text-align: center; margin-bottom:60px; background-color:whitesmoke; border-top-left-radius:13px; border-top-right-radius:13px; border-bottom:3px solid black; ">BIENVENIDO AL MENÚ DE REESTABLECER CONTRASEÑA</div>
+            <form method="post" id="log" class="formulario">
+                <div class="grupo">
+                    <input class="formulario__controls" type="text" name="usuario" value="123">
+                    <label>DOCUMENTO:</label>
+                </div>
+                <div class="grupo">
+                    <input class="formulario__controls" type="password" name="contraseña"><br>
+                    <label>CONTRASEÑA:</label>
+                </div>
+
+                <button class="formulario__boton" type="submit">Acceder</button>
+
+            </form>
+
+
+
+        </div>
+    </div>
+    
+   
+    
+
+</body>
+</html>
+<!--Html.ActionLink("Contacto", "inicio__administrador", "Admin")-->

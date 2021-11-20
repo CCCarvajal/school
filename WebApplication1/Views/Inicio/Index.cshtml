@@ -1,0 +1,174 @@
+﻿@model IEnumerable<proyecto.Models.registroAdministrador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/css/inicio.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio</title>
+</head>
+<body class="inicio">
+    <div class="inicio">
+        <!--ENCABEZADO DE PÁGINA-->
+        <div class="contenedor">
+            <div class="logo-colegio">
+                <!--LOGO DEL COLEGIO-->
+            </div>
+            <!--FORMULARIO-->
+            <form method="post" id="log" class="formulario">
+                <div class="grupo">
+                    <input class="formulario__controls" type="text" name="usuario">
+                    <label>DOCUMENTO:</label>
+                </div>
+                <div class="grupo">
+                    <input class="formulario__controls" type="password" name="contraseña"><br>
+                    <label>CONTRASEÑA:</label>
+                </div>
+
+                <button class="formulario__boton" type="submit">Acceder</button>
+                <div id="recuperar" style="color:blue; font-size:17px; margin-left:250px; margin-bottom:40px; cursor:pointer;">¿Olvidó su contraseña?</div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+    <div id="recuperarC"  class="inicio"style="margin-top:-120px; visibility:hidden;">
+        <!--ENCABEZADO DE PÁGINA-->
+        <div class="contenedor">
+          
+            <!--FORMULARIO-->
+            <form method="post" id="log2" class="formulario">
+                <div class="grupo">
+                    <input class="formulario__controls" type="text" name="email">
+                    <label>EMAIL:</label>
+                </div>
+                <div class="grupo">
+                    <input class="formulario__controls" type="text" name="documento">
+                    <label>DOCUMENTO:</label>
+                </div>
+                    <button class="formulario__boton" style="position: absolute; top:790px; left:380px; width:320px;" type="submit">Enviar</button>
+            </form>
+
+        </div>
+    </div>
+    @section scripts{
+        <script>
+$(document).ready(function ()
+{
+   
+    $('#log2').submit(function (e)
+    {
+
+                e.preventDefault();
+                url = "@Url.Content("~/Inicio/Correo")"
+                 //obtenemos los valores del formulario
+               parametros = $(this).serialize();
+               $.post(url, parametros,function (data)
+               {
+
+               console.log(data);
+
+                if (data == "Correo Enviado") {
+                    alert("Correo enviado");
+                }
+
+               })
+        
+        
+
+
+        })
+
+})
+$(document).ready(function ()
+{
+    $('#recuperar').click(ver);
+    function ver() {
+       
+        $estilo = document.querySelector("#recuperarC");
+        $estilo.style.visibility = 'visible';
+       
+    }
+ 
+
+})
+$(document).ready(function ()
+{
+        //logueo de ususario
+        $('#log').submit(function (e)
+        {
+            e.preventDefault();
+            url = "@Url.Content("~/Inicio/Iniciar")"
+        //obtenemos los valores del formulario
+           parametros = $(this).serialize();
+           $.post(url, parametros, function (data)
+           {
+
+         console.log(data);
+               if (data == "1") {
+
+                   
+                   
+
+
+                    //logueo de ususario
+        $('#log').submit(function (e)
+        {
+            e.preventDefault();
+            url = "@Url.Content("~/Docente/Index")"
+        //obtenemos los valores del formulario
+            parametros = $(this).serialize();
+              document.location.href = "@Url.Content("~/Docente/Index")";
+            
+
+           $.post(url, parametros, function (data)
+           {
+
+
+               
+          })
+
+
+      })
+
+
+
+
+
+
+
+
+
+
+               }
+               else if (data == "2") {
+                   document.location.href = "@Url.Content("~/Estudiante/Index")";
+
+               }
+               else if (data == "3") {
+                   document.location.href = "@Url.Content("~/Admin/Index")";
+               }
+               else if (data == "4") {
+                   alert("El usuario No existe")
+               }
+          })
+
+
+      })
+
+})
+        </script>
+}
+    
+</body>
+</html>
+<!--Html.ActionLink("Contacto", "inicio__administrador", "Admin")-->

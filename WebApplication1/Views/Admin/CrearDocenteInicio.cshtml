@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "CrearDocenteInicio";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creación de docentes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion-usuario__docentes__inicio.css" >
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Crear Docente
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+
+    <!--ESTACIONES CONTENEDORAS DE OPCIONES DE CREACION DE USUARIO-->
+    <form class="estacion" style="border:3px solid black; height:350px;">
+        <div class="estacion__cuadro1 fas fa-chalkboard-teacher fa-9x">
+            <a href="index.php?pagina=plantilla_crear-usuarios-docentes" style="text-decoration: none"><div class="estacion__cuadro__info1">@Html.ActionLink("CREACIÓN DE USUARIOS DOCENTES", "CrearDocente", "Admin")</div></a>
+            <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+        </div>
+        <div class="estacion__cuadro fas fa-book-open fa-9x">
+            <a href="index.php?pagina=plantilla_asignar-materias-docentes" style="text-decoration: none"><div class="estacion__cuadro__info">@Html.ActionLink("ASIGNACIÓN ÁREAS Y CURSOS", "AsignarMaterias", "Admin")</div></a>
+            <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+        </div>
+    </form>
+
+
+    <!--BOTONES FINALES-->
+    <div class="espacio">
+        <div class="contenedor-boton">
+            <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+                <div class="boton-cerrar-sesion">
+                    <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                </div>
+            </a>
+            <a class="boton-volver fas fa-arrow-alt-left" href="/Admin/Index"" style="text-decoration-line: none;">
+                <div class="fas fa-arrow-left fa-2x"></div>
+            </a>
+        </div>
+    </div>
+    <div class="espacio-final"></div>
+
+</body>
+</html>

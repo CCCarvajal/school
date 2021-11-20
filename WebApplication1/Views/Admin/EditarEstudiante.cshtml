@@ -1,0 +1,257 @@
+﻿@model proyecto.Models.AdministradorModels
+
+
+
+@{
+    ViewBag.Title = "CrearEstudiante";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear estudiante</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion_usuario__estudiantes.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Crear Estudiate
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+
+    <div class="datos-estudiante-texto">
+        <!--INTRODUCEN LOS DATOS-->
+        <form action="/Admin/EditarRegistroEstudiante" method="post" id="registro">
+            <div style="height: 1350px;">
+                <div class="columnas">
+                    DATOS DEL ESTUDIANTE:
+                    <!--NOMBRE DE LA COLUMNA Y LUEGO EL DATO-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_estudiante" required value="@Model.ApellidoUnoEstudiante">
+                        <label>PRIMER APELLIDO:</label>
+
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_estudiante" value="@Model.ApellidoDosEstudiante">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_estudiante" required value="@Model.NombreUnoEstudiante">
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_estudiante" value="@Model.NombreDosEstudiante">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <div class="grupo">
+                        <select class="filas" name="registro_genero_estudiante" required value="@Model.GeneroEstudiante">
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                        <label>GENERO</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_estudiante" required value="@Model.TipoDocumentoEstudiante">
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_estudiante" value="@Model.DocumentoEstudiante" required>
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <input type="hidden" name="id" value="@Model.DocumentoEstudiante" />
+
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="date" name="registro_fechaNacimiento_estudiante" required value="@Model.FechaNacimientoEstudiante">
+                        <label>FECHA DE NACIMIENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_rh_estudiante" required value="@Model.RHEstudiante">
+                            <option>O-</option>
+                            <option>O+</option>
+                            <option>A+</option>
+                            <option>B-</option>
+                            <option>B+</option>
+                            <option>AB-</option>
+                            <option>AB+</option>
+                        </select>
+                        <label>RH:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_eps_estudiante" required value="@Model.EPSEstudiante">
+                        <label>EPS:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoEstudiante" value="@Model.TipoEstudiante">
+                            <option>NORMAL</option>
+                            <option>INCLUSION</option>
+                        </select>
+                        <label>TIPO DE ESTUDIANTE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_estudiante" required value="@Model.DireccionEstudiante">
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_estudiante" required value="@Model.CelularEstudiante">
+                        <label>CELULAR:</label>
+                    </div>
+                    <!--curso-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_curso_estudiante" value="@Model.IDEstudianteCurso">
+
+                            <option>1</option>
+
+                        </select>
+                        <label>CURSO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_estado_estudiante" required value="@Model.EstadoAcademicoEstudiante">
+                            <option>ACTIVO</option>
+                            <option>DESERTOR</option>
+                            <option>RETIRADO</option>
+                            <option>TRANSFERIDO</option>
+                        </select>
+                        <label>ESTADO DEL ESTUDIANTE:</label>
+                    </div>
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_password_estudiante" required value="@Model.PasswordEstudiante">
+                        <label>CONTRASEÑA:</label>
+                    </div>
+                </div>
+                <!--dato nuevo-->
+                <div class="columnas">
+                    DATOS DEL PADRE:
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_padre" value="@Model.ApellidoUnoPadre">
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_padre" value="@Model.ApellidoDosPadre">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_padre" value="@Model.NombreUnoPadre">
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_padre" value="@Model.NombreDosPadre">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_padre" value="@Model.TipoDocumentoPadre">
+                            <option></option>
+                            <option>T.I</option>    
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_padre" value="@Model.DocumentoPadre">
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_padre" value="@Model.DireccionPadre">
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_padre" value="@Model.CelularPadre">
+                        <label>CELULAR:</label>
+                    </div>
+                </div>
+                <div class="columnas">
+                    DATOS DE LA MADRE:
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_madre" value="@Model.ApellidoUnoMadre">
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_madre" value="@Model.ApellidoDosMadre">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_madre" value="@Model.NombreUnoMadre">
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_madre" value="@Model.NombreDosMadre">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_madre" value="@Model.TipoDocumentoMadre">
+                            <option> </option>
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_madre" value="@Model.DocumentoMadre">
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_madre" value="@Model.DireccionMadre">
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_madre" value="@Model.CelularMadre">
+                        <label>CELULAR:</label>
+                    </div>
+                </div>
+                <!--boton registrar-->
+                <input class="boton-registrar-estudiante" type="submit" name="Actualizar" value="ACTUALIZAR">
+            </div>
+        </form>
+
+
+    </div>
+
+    <div class="espacio-final"></div>
+</body>
+</html>

@@ -1,0 +1,379 @@
+﻿@model IEnumerable<proyecto.Models.AdministradorModels>
+
+
+
+@{
+    ViewBag.Title = "CrearEstudiante";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear estudiante</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion_usuario__estudiantes.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Crear Estudiate
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+
+    <div class="datos-estudiante-texto">
+        <!--INTRODUCEN LOS DATOS-->
+        <form action="/Admin/CrearRegistroEstudiante" method="post" id="registro">
+            <div>
+                <div class="columnas">
+                    DATOS DEL ESTUDIANTE:
+                    <!--NOMBRE DE LA COLUMNA Y LUEGO EL DATO-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_estudiante" required>
+                        <label>PRIMER APELLIDO:</label>
+
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_estudiante">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_estudiante" required>
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_estudiante">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <div class="grupo">
+                        <select class="filas" name="registro_genero_estudiante" required>
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                        <label>GENERO</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_estudiante" required>
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_estudiante" required>
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="date" name="registro_fechaNacimiento_estudiante" required>
+                        <label>FECHA DE NACIMIENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_rh_estudiante" required>
+                            <option>O-</option>
+                            <option>O+</option>
+                            <option>A+</option>
+                            <option>B-</option>
+                            <option>B+</option>
+                            <option>AB-</option>
+                            <option>AB+</option>
+                        </select>
+                        <label>RH:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_eps_estudiante" required>
+                        <label>EPS:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoEstudiante">
+                            <option>NORMAL</option>
+                            <option>INCLUSION</option>
+                        </select>
+                        <label>TIPO DE ESTUDIANTE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_estudiante" required>
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_estudiante" required>
+                        <label>CELULAR:</label>
+                    </div>
+                    <!--curso-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_curso_estudiante">
+
+                            <option>601-M</option>
+
+                        </select>
+                        <label>CURSO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_estado_estudiante" required>
+                            <option>ACTIVO</option>
+                            <option>DESERTOR</option>
+                            <option>RETIRADO</option>
+                            <option>TRANSFERIDO</option>
+                        </select>
+                        <label>ESTADO DEL ESTUDIANTE:</label>
+                    </div>
+                </div>
+                <!--dato nuevo-->
+                <div class="columnas">
+                    DATOS DEL PADRE:
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_padre">
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_padre">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_padre">
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_padre">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_padre">
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_padre">
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_padre">
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_padre">
+                        <label>CELULAR:</label>
+                    </div>
+                </div>
+                <div class="columnas">
+                    DATOS DE LA MADRE:
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_madre">
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_madre">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_madre">
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_madre">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_madre">
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>TIPO DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_madre">
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_madre">
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_madre">
+                        <label>CELULAR:</label>
+                    </div>
+                </div>
+                <!--boton registrar-->
+                <input class="boton-registrar-estudiante" type="submit" name="registrar" value="Registrar">
+            </div>
+        </form>
+
+
+    </div>
+
+    <div class="datos-estudiante-texto-tabla table-responsive">
+        <table class="table table-striped table-bordered border-danger">
+            <thead>
+                <tr class="table-danger" content align="center">
+                    <th colspan="17">DATOS ESTUDIANTE</th>
+                    <th colspan="8">DATOS PADRE</th>
+                    <th colspan="8">DATOS MADRE</th>
+                </tr>
+                <tr class="table-danger">
+                    <th>#</th>
+                    <!--
+                    <th>SEDE</th>
+                    <th>GRADO</th>
+                    -->
+                    <th>APELLIDO_1</th>
+                    <th>APELLIDO_2</th>
+                    <th>NOMBRE_1</th>
+                    <th>NOMBRE_2</th>
+                    <th>GENERO</th>
+                    <th>TIPO.DOC</th>
+                    <th>No.DOC</th>
+                    <th>FECHA DE NACIMIENTO</th>
+                    <th>RH</th>
+                    <th>EPS</th>
+                    <th>TIPO DE ESTUDIANTE</th>
+                    <th>DIRECCION</th>
+                    <th>CELULAR</th>
+                    <th>CURSO</th>     
+                    <th>ESTADO DEL ESTUDIANTE</th>
+                    <th>ESTADO ACADEMICO</th>
+                    <th>CONTRASEÑA</th>
+                    <th>APELLIDO_1 PADRE</th>
+                    <th>APELLIDO_2 PADRE</th>
+                    <th>NOMBRE_1 PADRE</th>
+                    <th>NOMBRE_2 PADRE</th>
+                    <th>TIPO.DOC PADRE</th>
+                    <th>No.DOC PADRE</th>
+                    <th>DIRECCION PADRE</th>
+                    <th>CELULAR PADRE</th>
+                    <th>APELLIDO_1 MADRE</th>
+                    <th>APELLIDO_2 MADRE</th>
+                    <th>NOMBRE_1 MADRE</th>
+                    <th>NOMBRE_2 MADRE</th>
+                    <th>TIPO.DOC MADRE</th>
+                    <th>No.DOC MADRE</th>
+                    <th>DIRECCION MADRE</th>
+                    <th>CELULAR MADRE</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            @{
+                int i = 0;
+            }
+
+            @foreach (var item in Model)
+            {
+                i++;
+
+                <tbody>
+
+                    <tr class="align-middle">
+                        <td>@i</td>
+                        <td>@item.ApellidoUnoEstudiante</td>
+                        <td>@Html.DisplayFor(modelItem => item.ApellidoDosEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreUnoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreDosEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GeneroEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoDocumentoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DocumentoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechaNacimientoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RHEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EPSEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DireccionEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CelularEstudiante)</td>
+                        <td>@item.IDEstudianteCurso</td>
+                        <td>@Html.DisplayFor(modelItem => item.EstadoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EstadoAcademicoEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PasswordEstudiante)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ApellidoUnoPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ApellidoDosPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreUnoPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreDosPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoDocumentoPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DocumentoPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DireccionPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CelularPadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ApellidoUnoMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ApellidoDosMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreUnoMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreDosMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoDocumentoMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DocumentoMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DireccionMadre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CelularMadre)</td>
+                       
+                        <td>
+                            <div  content align="center">
+                                <div class="px-1">
+                                    <a class="btn btn-warning" href="/Admin/EditarEstudiante/@item.DocumentoEstudiante"><i class="fas fa-pencil-alt"></i></a>
+                                </div>
+                                
+                            </div>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            }
+        </table>
+    </div>
+   
+    <!--BOTONES FINALES-->
+    <div class="espacio">
+        <div class="contenedor-boton">
+            <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link" >
+                <div class="boton-cerrar-sesion">
+                    <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                </div>
+            </a>
+            <a class="boton-volver" href="/Admin/Index" style="text-decoration-line: none; ">
+                <div class="fas fa-arrow-left fa-2x"></div>
+            </a>
+            
+            <!--<a class="container btn btn-success" href="plantilla_reporte-final2.php">
+                <div class="fas fa-file-excel fa-2x"></div>
+            </a>-->
+        </div>
+    </div>
+    <div class="espacio-final"></div>
+</body>
+</html>

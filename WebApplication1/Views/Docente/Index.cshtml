@@ -1,0 +1,73 @@
+﻿@model IEnumerable<proyecto.Models.CursosModels>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__plantilla-inicial-docente.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Bienvenido Docente
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+
+    <!--ESTACIONES CON INFORMACIÓN DEL GRADO-->
+
+    <div class="grados">
+        @{int x = 0; int y = 0;}
+        @foreach (var item in Model)
+        {
+            y++;
+            if (item.DocumentoDocente == 1234567 && x<1)
+            {
+                x++;
+                //Html.DisplayFor(modelItem => Model)
+                <div class="grados__cuadro fas fas fa-users fa-9x">
+
+                    <form action="~/Docente/SabanasNotas/@item.NombreMateria">
+                        <input type="hidden" name="name" value="@item.NombreCurso" />
+                        <button type="submit" name="name" value="" class="grados__cuadro__num-grado" style="top:-110px; margin-left:-20px; width:200px;">
+                            @item.NombreMateria<br> @item.NombreCurso
+                        </button>
+                    </form>
+                    <!--<div class="grados__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+                </div>
+                
+                
+            }
+
+        }
+
+    </div>
+    <a href="/Docente/SabansNotas" style="opacity:0; display:block; height:200px; margin-top:-100px;">content</a>
+
+    <!--BOTON CERRAR SESIÓN-->
+    <div class="contenedor-boton">
+        <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+            <div class="boton-cerrar-sesion">
+                <div class="salir fas fa-sign-out-alt fa-2x"></div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

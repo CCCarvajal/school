@@ -1,0 +1,90 @@
+﻿@model IEnumerable<proyecto.Models.CursosModels>
+@{
+    ViewBag.Title = "Inicio";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__plantilla-inicial__administrativos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+
+            Bienvenido Administrador
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+
+    <!--ESTACIONES CONTENEDORAS DE LAS PAGINAS DE CREACIÓN DE USUARIOS-->
+    <div class="estacion">
+        <div class="estacion__cuadro fas fa-user-graduate fa-9x ">
+            <a style="text-decoration: none">
+                <div style="margin-left:-40px;" class="estacion__cuadro__info" id="uno">@Html.ActionLink("USUARIOS ESTUDIANTES", "CrearEstudiante", "Admin")</div>
+            </a>
+            <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+        </div>
+
+        <div class="estacion__cuadro fas fa-chalkboard-teacher fa-9x">
+            <a style="text-decoration: none; "><div class="estacion__cuadro__info" id="dos">@Html.ActionLink("USUARIOS DOCENTES", "CrearDocenteInicio", "Admin")</div></a>
+            <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+        </div>
+        <div class="estacion__cuadro fas fa-user-cog fa-9x">
+            <a style="text-decoration: none"><div class="estacion__cuadro__info" id="dos">@Html.ActionLink("USUARIOS ADMIN.", "CrearAdministrador", "Admin")</div></a>
+            <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen"></div>-->
+        </div>
+
+
+
+
+
+    </div>
+    @{
+        var i = 0;
+    }
+    <div class="estacion" style="border: 3px solid black; height:350px; overflow-y:scroll; padding-left:30px;">
+        @foreach (var item in Model)
+        {
+            i++;
+            if (i < 11)
+            {
+
+                <form action="/Admin/SabanasNotas/@item.NombreCurso" class="estacion__cuadro fas fa-user-graduate fa-9x ">
+                    <input type="hidden" name="id" value="@item.NombreCurso" />
+                    <input type="submit" style="top:-110px; margin-left:20px;" class="estacion__cuadro__info" id="uno" value="@item.NombreCurso">
+
+
+                    <!--<div class="estacion__cuadro__agregar-img"><input type="file" name="" class="boton-imagen" ></div>-->
+                </form>
+            }
+
+
+
+        }
+    </div>
+    <!--BOTÓN FINAL-->
+    <div class="contenedor-boton">
+        <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+            <div class="boton-cerrar-sesion">
+                <div class="salir fas fa-sign-out-alt fa-2x"></div>
+            </div>
+        </a>
+
+    </div>
+</body>
+</html>
+

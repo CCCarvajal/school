@@ -1,0 +1,259 @@
+﻿@model IEnumerable<proyecto.Models.RegristoAcudiente>
+@{
+    ViewBag.Title = "CrearAcudiente";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear acudiente</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion-usuario__acudiente.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">
+            Crear Acudiente
+        </div>
+    </div>
+    <div class="titulos">
+        <h2 class="titulos__1">Nombre</h2>
+        <h2 class="titulos__1--active">de la</h2>
+        <h2 class="titulos__1">Institución</h2>
+    </div>
+    <!--
+      <script>
+      </script><div class="datos-texto alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>¡EL DOCUMENTO DEL ESTUDIANTE NO ESTÁ REGISTRADO!</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <script>
+
+      </script>'<div class="datos-texto alert alert-success alert-dismissible fade show" role="alert">
+          <strong>¡EL ACUDIENTE HA SIDO REGISTRADO!</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <script>
+
+      </script><div class="datos-texto alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>¡DEBE LLENAR LOS CAMPOS NECESARIOS!<br>ACUDIENTE NO REGISTRADO</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <script>
+
+      </script><div class="datos-texto alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>¡DEBE LLENAR LOS CAMPOS NECESARIOS!<br>EL ACUDIENTE Y EL ESTUDIANTE NO ESTÁN REGISTRADOS</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>'
+
+    ¿-->
+    <!--TEXTO DATOS DEL ACUDIENTE-->
+    <div class="datos-texto">
+        DATOS ACUDIENTES:
+        <!--INTRODUCEN LOS DATOS DEL ACUDIENTE-->
+        <form method="post">
+            <div class="columnas">
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_apellido_uno_acudiente">
+                    <label>PRIMER APELLIDO:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_apellido_dos_acudiente">
+                    <label>SEGUNDO APELLIDO:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_nombre_uno_acudiente">
+                    <label>PRIMER NOMBRE:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_nombre_dos_acudiente">
+                    <label>SEGUNDO NOMBRE:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <select class="filas" name="registro_genero_acudiente">
+                        <option>M</option>
+                        <option>F</option>
+                    </select>
+                    <label>GÉNERO:</label>
+                </div>
+            </div>
+            <div class="columnas">
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <select class="filas" name="registro_tipoDocumento_acudiente">
+                        <option>T.I</option>
+                        <option>C.C</option>
+                        <option>R.C</option>
+                        <option>C.E</option>
+                    </select>
+                    <label>TIPO DE DOCUMENTO:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_documento_acudiente" required>
+                    <label>No. DE DOCUMENTO:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_celular_acudiente">
+                    <label>CELULAR:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_direccion_acudiente">
+                    <label>DIRECCIÓN:</label>
+                </div>
+                <!--dato nuevo-->
+                <div class="grupo">
+                    <input class="filas" type="text" name="registro_documento_estudiante" required>
+                    <label>DOCUMENTO DEL ESTUDIANTE:</label>
+                </div>
+            </div>
+            <input class="boton-registrar" type="submit" name="registrar" value="REGISTRAR">
+        </form>
+    </div>
+
+
+    <div class="datos-texto-tabla table-responsive">
+        <table class="table table-striped table-bordered border-danger">
+            <thead>
+                <tr class="table-danger" content align="center">
+                    <th colspan="12">DATOS ACUDIENTE</th>
+                    <th colspan="6">DATOS ESTUDIANTE</th>
+                </tr>
+                <tr class="table-danger">
+                    <th>#</th>
+                    <th>Editar</th>
+                    <th>Apellido_1</th>
+                    <th>Apellido_2</th>
+                    <th>Nombre_1</th>
+                    <th>Nombre_2</th>
+                    <th>Genero</th>
+                    <th>Tipo.Doc</th>
+                    <th>Documento</th>
+                    <th>Celular</th>
+                    <th>Direccion</th>
+                    <th>Contraseña</th>
+                    <th>Apellido_1</th>
+                    <th>Apellido_2</th>
+                    <th>Nombre_1</th>
+                    <th>Nombre_2</th>
+                    <th>Documento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+      
+                    <tr class="align-middle">
+                        <td rowspan="-"></td>
+                        <td rowspan="-">
+                            <div class="px-1">
+                                <a class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                            </div>
+                        </td>
+                        <td rowspan=""</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+                        <td rowspan="-"</td>
+
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            <div content align="center">
+                                <form method="post">
+                                    <input type="hidden">
+                                    <input type="hidden">
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
+                        </td>
+
+                    <tr class="align-middle">
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            <div content align="center">
+                                <form method="post">
+                                    <input type="hidden" value="name=" documento_acudiente">
+                                    <input type="hidden" value="name=" documento_estudiante">
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tr>
+
+                </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+
+    </div>
+    <div class="contianer">
+
+    </div>
+
+    <!--BOTONES FINALES-->
+    <div class="espacio">
+        <div class="contenedor-boton">
+            <a href="index.php?pagina=plantilla_cerrar-sesion" class="boton-cerrar-sesion__link">
+                <div class="boton-cerrar-sesion">
+                    <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                </div>
+            </a>
+            <a class="boton-volver fas fa-arrow-alt-left" style="text-decoration-line: none;">
+                <div class="fas fa-arrow-left fa-2x"></div>
+            </a>
+        </div>
+    </div>
+    <div class="espacio-final"></div>
+
+</body>
+</html>
+

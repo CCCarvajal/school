@@ -1,0 +1,152 @@
+﻿@model proyecto.Models.RegistroAdministrador
+
+@{
+    ViewBag.Title = "CrearAdministrador";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar administrador</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion-usuario__administradores.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">Crear Administrador</div>
+        <div class="titulos">
+            <h2 class="titulos__1">Nombre</h2>
+            <h2 class="titulos__1--active">de la</h2>
+            <h2 class="titulos__1">Institución</h2>
+        </div>
+        <!--
+        <?php
+        $registro=controladorFormularios::controladorRegistroAdministrador();
+        if ($registro=="ok") {
+        echo '
+        <script>
+                if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+                }
+        </script>';
+        echo '<div class="datos-texto alert alert-success alert-dismissible fade show" role="alert">
+            <strong>¡EL ADMINISTRADOR HA SIDO REGISTRADO!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        $administradores=controladorFormularios::controladorSeleccionarRegistrosAdministradores();
+        }else if($registro=="errorAdministrador"){
+        echo '
+        <script>
+                if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+                }
+        </script>';
+        echo '<div class="datos-texto alert alert-success alert-danger fade show" role="alert">
+            <strong>¡EL DOCUMENTO YA ESTA REGISTRADO!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        }
+        ?>-->
+        <div class="datos-texto">
+            DATOS ADMINISTRADOR:
+            <!--INTRODUCEN LOS DATOS-->
+            <form class="datos-columnas" method="post" action="/Admin/EditarRegistroAdministrador">
+                <div class="columnas">
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="ApellidoUnoAdministrador" value="@Model.ApellidoUnoAdministrador" required>
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="ApellidoDosAdministrador" value="@Model.ApellidoDosAdministrador" >
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="NombreUnoAdministrador"  value="@Model.NombreUnoAdministrador" required>
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="NombreDosAdministrador" value="@Model.NombreDosAdministrador" >
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="GeneroAdministrador" value="@Model.GeneroAdministrador" >
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                        <label>GENERO</label>
+                    </div>
+                </div>
+                <div class="columnas">
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="TipoDocumentoAdministrador" value="@Model.TipoDocumentoAdministrador">
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>Tipo Documento:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="DocumentoAdministrador" value="@Model.DocumentoAdministrador" required>
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="DireccionAdministrador" value="@Model.DireccionAdministrador" required>
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="CelularAdministrador" value="@Model.CelularAdministrador" required>
+                        <label>CELULAR:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="EmailAdministrador" value="@Model.EmailAdministrador" required>
+                        <label>EMAIL:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="PasswordAdministrador" value="@Model.PasswordAdministrador" required>
+                        <label>PASSWORD:</label>
+                    </div>
+                </div>
+
+                <input class="boton-registrar" type="submit" name="registrar" value="REGISTRAR">
+            </form>
+        </div>
+        
+
+        <!--BOTONES FINALES-->
+        <footer>
+            <div class="espacio">
+                <div class="contenedor-boton">
+                    <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+                        <div class="boton-cerrar-sesion">
+                            <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                        </div>
+                    </a>
+                    <a class="boton-volver fas fa-arrow-alt-left" href="/Admin/Index" style="text-decoration-line: none;">
+                        <div class="fas fa-arrow-left fa-2x"></div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
+
+

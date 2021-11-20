@@ -1,0 +1,180 @@
+/*ESTILO ENCABEZADO DE PÁGINA*/
+.parte-superior {
+    position: relative;
+    margin: 50px 100px 0;
+    height: 146px; /*317px*/
+}
+
+.parte-superior__logo-colegio {
+    float: left;
+    height: 136px;
+    width: 136px;
+    margin-top: -70px;
+    background-color: indianred;
+    border-radius: 10px;
+}
+
+.parte-superior__titulos {
+    height: 146px;
+    color: #1b1717;
+    text-align: center;
+    margin-left: 86px;
+    padding-left: 200px;
+    font-size: 33px;
+    font-weight: 600;
+    padding-top: 0px;
+}
+
+.titulos {
+    height: auto;
+    width: 320px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 0;
+    margin-top: -70px;
+}
+
+.titulos__1 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.titulos__1--active {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+/*ESTILO DE LAS ESTACIONES Y SU CONTENIDO*/
+.estacion{
+	margin:  15px 50px;
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content: space-around;
+}
+
+.estacion__cuadro{
+	position: relative;
+	margin-top: 58px;
+	margin-left: 40px;
+	margin-right: 40px;	
+	padding-top: 10px;
+	height: 150px;
+	width: 150px;
+	border-radius: 16px;
+	display: inline-block;
+	color: #630000;
+}
+.estacion__cuadro__info{
+	position: relative;
+	background-color: #FFFFFF;
+	height: auto;
+	width: 160px;
+	color: #1b1717;
+	bottom: 0;
+	border: 2px solid #810000;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 23px;
+	font-weight: 600;
+	margin-left: 1px;
+	padding-top: 1.75px;
+	cursor: pointer;
+}
+.estacion__cuadro1{
+	position: relative;
+	margin-top: 58px;
+	margin-left: 23px;
+	margin-right: 52px;	
+	padding-top: 10px;
+	height: 150px;
+	width: 150px;
+	border-radius: 16px;
+	display: inline-block;
+	color: #630000;
+}
+.estacion__cuadro__info1{
+	position: relative;
+	background-color: #FFFFFF;
+	height: auto;
+	width: 160px;
+	color: #1b1717;
+	bottom: 0;
+	border: 2px solid #810000;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 23px;
+	font-weight: 600;
+	margin-left: 10px;
+	padding-top: 1.75px;
+	cursor: pointer;
+}
+/*ESTILO BOTONES FINALES*/
+
+.contenedor-boton{
+  display: block;
+  margin-left: 40px;
+  width: 190px;
+  height: 87px;
+  align-self: flex-end;
+  position: fixed;
+  bottom: 10px;
+}
+.boton-volver{ 
+  background-color: #009925;
+  width: 87px;
+  height: 87px;
+  color: #FFFFFF;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 100%;
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  z-index: 100;
+
+}
+.boton-volver:hover{ 
+  background-color: #0D5D14;
+  color:white;
+}
+.boton-cerrar-sesion{
+  background-color: #810000;
+  margin-left: 10px;
+  width: 87px;
+  height: 87px;
+  color: white;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 6px;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  float: right;
+  z-index: 100;
+}
+.boton-cerrar-sesion:hover{
+  background-color: #630000;
+  color: white
+}
+.boton-cerrar-sesion__link{
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  align-self: flex-end;
+}
+.espacio-final{
+  display: inline-block;
+  margin: none;
+  height: 160px;
+  width: 100%;
+  margin-top: 20px;
+  z-index: 100;
+}

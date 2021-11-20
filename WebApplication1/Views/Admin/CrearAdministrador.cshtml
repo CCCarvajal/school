@@ -1,0 +1,211 @@
+﻿@model IEnumerable<proyecto.Models.RegistroAdministrador>
+
+@{
+    ViewBag.Title = "CrearAdministrador";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear administrador</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/css/estilo__creacion-usuario__administradores.css">
+    <link rel="stylesheet" type="text/css" href="vistas/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="vistas/img/icono/logo-colegio.ico">
+</head>
+<body style="background-color:#eeebdd;">
+    <!--ENCABEZADO DE PÁGINA-->
+
+    <div class="parte-superior">
+        <div class="parte-superior__logo-colegio">
+        </div>
+        <div class="parte-superior__titulos">Crear Administrador</div>
+        <div class="titulos">
+            <h2 class="titulos__1">Nombre</h2>
+            <h2 class="titulos__1--active">de la</h2>
+            <h2 class="titulos__1">Institución</h2>
+        </div>
+        <!--
+        <?php
+        $registro=controladorFormularios::controladorRegistroAdministrador();
+        if ($registro=="ok") {
+        echo '
+        <script>
+                if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+                }
+        </script>';
+        echo '<div class="datos-texto alert alert-success alert-dismissible fade show" role="alert">
+            <strong>¡EL ADMINISTRADOR HA SIDO REGISTRADO!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        $administradores=controladorFormularios::controladorSeleccionarRegistrosAdministradores();
+        }else if($registro=="errorAdministrador"){
+        echo '
+        <script>
+                if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+                }
+        </script>';
+        echo '<div class="datos-texto alert alert-success alert-danger fade show" role="alert">
+            <strong>¡EL DOCUMENTO YA ESTA REGISTRADO!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        }
+        ?>-->
+        <div class="datos-texto">
+            DATOS ADMINISTRADOR:
+            <!--INTRODUCEN LOS DATOS-->
+            <form class="datos-columnas" method="post" action="/Admin/CrearRegistroAdministrador">
+                <div class="columnas">
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_uno_administrador" required>
+                        <label>PRIMER APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_apellido_dos_administrador">
+                        <label>SEGUNDO APELLIDO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_uno_administrador" required>
+                        <label>PRIMER NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_nombre_dos_administrador">
+                        <label>SEGUNDO NOMBRE:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_genero_administrador">
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                        <label>GENERO</label>
+                    </div>
+                </div>
+                <div class="columnas">
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <select class="filas" name="registro_tipoDocumento_administrador">
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>R.C</option>
+                            <option>C.E</option>
+                        </select>
+                        <label>Tipo Documento:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_documento_administrador" required>
+                        <label>No. DE DOCUMENTO:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_direccion_administrador" required>
+                        <label>DIRECCIÓN:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="number" name="registro_celular_administrador" required>
+                        <label>CELULAR:</label>
+                    </div>
+                    <!--dato nuevo-->
+                    <div class="grupo">
+                        <input class="filas" type="text" name="registro_email_administrador" required>
+                        <label>EMAIL:</label>
+                    </div>
+                </div>
+
+                <input class="boton-registrar" type="submit" name="registrar" value="REGISTRAR">
+            </form>
+        </div>
+        <div class="datos-texto-tabla table-responsive">
+            <table class="table table-striped table-bordered border-danger">
+                <thead>
+                    <tr class="table-danger" content align="center">
+                        <th colspan="13">DATOS DOCENTE</th>
+                    </tr>
+                    <tr class="table-danger">
+                        <th>#</th>
+                        <th>Apellido 1</th>
+                        <th>Apellido 2</th>
+                        <th>Nombre 1</th>
+                        <th>Nombre 2</th>
+                        <th>Genero</th>
+                        <th>Tipo Doc</th>
+                        <th>No. Doc</th>
+                        <th>Dirección</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Contraseña</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                @{
+                    int i = 0;
+                }
+
+                @foreach (var item in Model)
+                {
+                    i++;
+                    <tbody>
+
+                        <tr class="align-middle">
+                            <td>@i</td>
+                            <td>@item.ApellidoUnoAdministrador</td>
+                            <td>@item.ApellidoDosAdministrador</td>
+                            <td>@item.NombreUnoAdministrador</td>
+                            <td>@item.NombreDosAdministrador</td>
+                            <td>@item.GeneroAdministrador</td>
+                            <td>@item.TipoDocumentoAdministrador</td>
+                            <td>@item.DocumentoAdministrador</td>
+                            <td>@item.DireccionAdministrador</td>
+                            <td>@item.CelularAdministrador</td>
+                            <td>@item.EmailAdministrador</td>
+                            <td>@item.PasswordAdministrador</td>
+                            <td>
+                                <div content align="center">
+                                    <div class="px-1">
+                                        <a class="btn btn-warning" href="/Admin/EditarAdministrador/@item.DocumentoAdministrador"><i class="fas fa-pencil-alt"></i></a>
+                                    </div>
+                                    <!--<form method="post">
+                            <input type="hidden" value="<?php echo $value["DocumentoAdministrador"]; ?>" name="eliminar">
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            <?php
+                            $eliminar = new controladorFormularios();
+                            $eliminar->controladorEliminarRegistrosAdministradores();
+                            ?>
+                        </form>-->
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </div>
+
+        <!--BOTONES FINALES-->
+        <footer>
+            <div class="espacio">
+                <div class="contenedor-boton">
+                    <a href="/Inicio/CerrarSesion" class="boton-cerrar-sesion__link">
+                        <div class="boton-cerrar-sesion">
+                            <div class="salir fas fa-sign-out-alt fa-2x"></div>
+                        </div>
+                    </a>
+                    <a class="boton-volver fas fa-arrow-alt-left" href="/Admin/Index" style="text-decoration-line: none;">
+                        <div class="fas fa-arrow-left fa-2x"></div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,292 @@
+/*ESTILO ENCABEZADO DE PÁGINA*/
+.parte-superior {
+    position: relative;
+    margin: 50px 100px 0;
+    height: 146px; /*317px*/
+}
+
+.parte-superior__logo-colegio {
+    float: left;
+    height: 136px;
+    width: 136px;
+    margin-top: -70px;
+    background-color: indianred;
+    border-radius: 10px;
+}
+
+.parte-superior__titulos {
+    height: 146px;
+    color: #1b1717;
+    text-align: center;
+    margin-left: 86px;
+    padding-left: 200px;
+    font-size: 33px;
+    font-weight: 600;
+    padding-top: 0px;
+}
+
+.titulos {
+    height: auto;
+    width: 120px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 0;
+    margin-top: -70px;
+}
+
+.titulos__1 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.titulos__1--active {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+/*DISEÑO DONDE SE INTRODUCEN LOS DATOS*/
+.columnas{
+	width: 50%;
+	float: left;
+	border-right: 3px solid #630000; 
+	box-sizing: border-box;
+}
+.filas {
+    min-width: 98%;
+    height: 40px;
+    margin-left: 1%;
+    float: left;
+    display: block;
+    padding-left: 5px;
+    border-radius: 10px;
+    border: 3px solid #630000;
+    margin-top: 20px;
+    outline: none;
+    font-size: 15px;
+    background: white;
+}
+label{
+		width:98%;
+		height: 0;
+		margin-left: 1%;
+		margin-top: -20px;
+		border-radius: 10px;
+		position: absolute;
+		padding-top:10px;
+		font-size:15px;
+		opacity: 0.5;
+		display: inline;
+		pointer-events: none;
+		transition: .4s ease-in-out all;
+		text-align: left;	
+	}
+/*EFECTOS*/
+.grupo{
+	width: 98%;
+	height: 60px;
+	margin-left: 1%;
+	position: relative;
+	display: flex;
+	margin-top: 20px;
+	float: left;
+}
+.filas:focus{
+	font-size: 23px;
+}
+.filas:focus~label{
+	color: #1b1717;
+	font-size: 23px;
+	margin-top: -20px;
+	border-radius: 10px;
+	position: absolute;
+	padding-top:10px;
+	font-size:25px;
+	opacity: 1;
+	display: inline;
+	z-index: -.5;
+	pointer-events: none;
+	padding-left: 30px;
+}
+.columnas:nth-child(2n){
+	border-right: none; 
+}
+/*DISEÑO BOTÓN REGISTRAR */
+.boton-registrar {
+    min-width: 100%;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 3px solid #630000;
+    background-color: #810000;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    color: white;
+}
+.boton-registrar:hover{
+	background-color: #630000;
+	font-size: 30px;
+}
+/* DISEÑO TEXTO DATOS*/
+.datos-texto{
+	width: 1436px;
+	height: auto;
+	margin-top: 20px;
+	margin-left: -60px;
+	padding-top: 15px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 25px;
+	border-radius: 10px;
+	border: 3px solid #630000;
+	background-color: #f3f4ed;
+}
+.datos-texto-tabla{
+	width: 1436px;
+	height: auto;
+	margin-top: 20px;
+	margin-left: -60px;
+	padding-top: 15px;
+	border-radius: 10px;
+	border: 3px solid #630000;
+	background-color: #f3f4ed;	
+}
+
+/*ESTILO BOTONES FINALES*/
+.espacio{
+	  display: inline-block;
+	  margin: none;
+	  height: 140px;
+	  width: 100%;
+	  margin-top: 20px;
+	  z-index: 100;
+}
+.contenedor-boton{
+  display: block;
+  margin-left: -60px;
+  width: 190px;
+  height: 87px;
+  align-self: flex-end;
+  position: fixed;
+  bottom: 10px;
+}
+.boton-volver{ 
+  background-color: #009925;
+  width: 87px;
+  height: 87px;
+  color: #FFFFFF;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 100%;
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  z-index: 100;
+
+}
+.boton-volver:hover{ 
+  background-color: #0D5D14;
+  color:white;
+}
+.boton-cerrar-sesion{
+  background-color: #810000;
+  margin-left: 10px;
+  width: 87px;
+  height: 87px;
+  color: #FFFFFF;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 6px;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  float: right;
+  z-index: 100;
+}
+.boton-cerrar-sesion:hover{
+  background-color: #630000;
+}
+.boton-cerrar-sesion__link{
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 1367px){
+		.parte-superior{
+			width: 1200px;
+		}
+		.datos-texto{
+			font-size: 18px;
+			width: 1247px;
+		}
+		.datos-texto-tabla{
+			font-size: 18px;
+			width: 1247px;
+		}
+		.filas:focus~label{
+			font-size:20px; 
+		}
+		
+	}
+	@media screen and (max-width: 1281px){
+		.parte-superior{
+			width: 1145px;
+		}
+		.datos-texto{
+			font-size: 15px;
+			width: 1185px;
+		}
+		.datos-texto-tabla{
+			font-size: 15px;
+			width: 1185px;
+		}
+		
+	}
+	@media screen and (max-width: 1025px){
+		.parte-superior{
+			width: 905px;
+		}
+		.datos-texto{
+			width: 925px;
+			font-size: 15px;
+		}
+		.datos-texto-tabla{
+			width: 925px;
+			font-size: 15px;
+		}
+		
+	}
+	@media screen and (max-width: 800px){
+		.parte-superior{
+			width: 605px;
+		}
+		.datos-texto{
+			width: 705px;
+			font-size: 11px;
+		}
+		.datos-texto-tabla{
+			width: 705px;
+			font-size: 11px;
+		}
+		label{
+			font-size: 11px;
+		}
+		.filas:focus~label, .filas:valid~label{
+			font-size: 15px;
+		}
+	}

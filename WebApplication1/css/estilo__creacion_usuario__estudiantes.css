@@ -1,0 +1,315 @@
+/*ESTILO ENCABEZADO DE PÁGINA*/
+.parte-superior {
+    position: relative;
+    margin: 50px 100px 0;
+    height: 146px; /*317px*/
+}
+
+.parte-superior__logo-colegio {
+    float: left;
+    height: 136px;
+    width: 136px;
+    margin-top: -70px;
+    background-color: indianred;
+    border-radius: 10px;
+}
+
+.parte-superior__titulos {
+    height: 146px;
+    color: #1b1717;
+    text-align: center;
+    margin-left: 86px;
+    padding-left: 200px;
+    font-size: 33px;
+    font-weight: 600;
+    padding-top: 0px;
+}
+
+.titulos {
+    height: auto;
+    width: 320px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 0;
+    margin-top: -70px;
+}
+
+.titulos__1 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.titulos__1--active {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+	/* DISEÑO DE LAS COLUMNAS*/
+	.columnas{
+		width:33.3%;
+		position: relative;
+		float: left;
+		border-right: 3px solid #630000; 
+		right: -3px;
+	}
+	/*DISEÑO DONDE SE INTRODUCEN LOS DATOS*/
+	.filas{
+		min-width: 450px;
+		height: 40px;
+		margin-left: 1%;
+		float: left;
+		display: block;
+		padding-left: 5px;
+		border-radius: 10px;
+		border: 3px solid #630000; 
+		margin-top: 20px;
+		outline: none;
+		font-size: 15px;
+        position: absolute;
+
+		background: white;
+	}
+    
+ 
+	label{
+		width:98%;
+		height: 0;
+		margin-left: 1%;
+		margin-top: -20px;
+		border-radius: 10px;
+		position: absolute;
+		padding-top:10px;
+		font-size:15px;
+		opacity: 0.5;
+		display: inline;
+		pointer-events: none;
+		transition: .4s ease-in-out all;
+		text-align: left;	
+	}
+	/*EFECTOS*/
+	.grupo{
+		width: 98%;
+		height: 60px;
+		margin-left: 1%;
+		position: relative;
+		display: flex;
+		margin-top: 20px;
+		float: left;
+	}
+	.filas:focus{
+		font-size: 23px;
+
+	} 
+	.filas:focus~label{
+		color: #1b1717;
+		font-size: 23px;
+		margin-top: -20px;
+		border-radius: 10px;
+		position: absolute;
+		padding-top:10px;
+		font-size:25px;
+		opacity: 1;
+		display: inline;
+		z-index: -.5;
+		pointer-events: none;
+		padding-left: 30px;
+
+	}
+	.columnas:nth-child(3n){
+		border-right: none; 
+	}
+
+	/* DISEÑO TEXTO DATOS DEL ESTUDIANTE Y DEL ACUDUENTE*/
+	.datos-estudiante-texto{
+		width: 1436px;
+		margin-top: 20px;
+		margin-left: 40px;
+		padding-top: 15px;
+		text-align: center;
+		font-weight: 600;
+		font-size: 25px;
+		border-radius: 10px;
+		border: 3px solid #630000;
+		background-color: #f3f4ed;
+	}
+	.datos-estudiante-texto-tabla{
+		width: 1436px;
+		margin-top: 20px;
+		margin-left: 40px;
+		padding-top: 15px;				
+		border-radius: 10px;
+		border: 3px solid #630000;
+		background-color: #f3f4ed;
+		justify-content: left;		
+	}
+
+
+	/*DISEÑO BOTONES REGISTRAR ESTUDIANTE Y REGISTRAR ACUDIENTE*/
+	.boton-registrar-estudiante{
+		width: 60%;
+		height: 60px;
+		text-align: center;
+		font-size: 23px;
+		font-weight: 600;
+		border-radius: 12px;
+		border:3px solid #630000;
+		background-color: #810000; 
+		box-shadow: 0px 3px 6px #00000029;
+		margin-top: 500px;
+		margin-bottom: 45px;
+		cursor: pointer;
+		color: white;
+	}
+
+	.boton-registrar-estudiante:hover{
+		background-color: #630000;
+		font-size: 30px;
+	}
+
+	/*ESTILO BOTONES FINALES*/
+	.contenedor-boton{
+	  display: block;
+	  margin-left: 40px;
+	  width: 290px;
+	  height: 87px;
+	  align-self: flex-end;
+	  position: fixed;
+	  bottom: 10px;
+	}
+	.boton-volver{ 
+	  background-color: #009925;
+	  width: 87px;
+	  height: 87px;
+	  color: #FFFFFF;
+	  box-shadow: 0px 3px 6px #00000029;
+	  border-radius: 100%;
+	  text-align: center;
+	  padding-top: 15px;
+	  padding-left: 5px;
+	  cursor: pointer;
+	  font-size: 28px;
+	  font-weight: 600;
+	  color: white;
+	  position: absolute;
+	  z-index: 100;
+
+	}
+	.boton-volver:hover{ 
+	  background-color: #0D5D14;
+	  color:white;
+	}
+	.boton-cerrar-sesion{
+	  background-color: #810000;
+	  margin-left: 10px;
+	  width: 87px;
+	  height: 87px;
+	  color: white;
+	  box-shadow: 0px 3px 6px #00000029;
+	  border-radius: 100%;
+	  text-align: center;
+	  padding-top: 20px;
+	  padding-left: 6px;
+	  font-size: 23px;
+	  font-weight: 600;
+	  cursor: pointer;
+	  float: right;
+	  z-index: 100;
+	}
+	.boton-cerrar-sesion:hover{
+	  background-color: #630000;
+	  color: white
+	}
+	.container{
+		background-color: #1f5f2f;
+		width: 87px;
+		height: 87px;
+		color: #FFFFFF;
+		box-shadow: 0px 3px 6px #00000029;
+		border-radius: 100%;
+		text-align: center;
+		padding-top: 13px;
+		padding-left: 13px;
+		cursor: pointer;
+		font-size: 20px;
+		font-weight: 600;
+		position: absolute;
+		font-family: 'Poppins', sans-serif;
+		z-index: 100;
+		left: 101.5px;
+	}
+	.boton-cerrar-sesion__link{
+	  font-size: 28px;
+	  font-weight: 600;
+	  color: white;
+	  text-decoration: none;
+	  align-self: flex-end;
+	}
+	.espacio-final{
+	  display: inline-block;
+	  margin: none;
+	  height: 140px;
+	  width: 100%;
+	  margin-top: 20px;
+	  z-index: 100;
+	}
+
+
+
+	@media screen and (max-width: 1367px){
+		.parte-superior{
+			width: 1200px;
+		}
+		.datos-estudiante-texto{
+			width: 1247px;
+		}
+		.filas:focus~label{
+			font-size:20px; 
+		}
+		.datos-estudiante-texto-tabla{
+			width: 1247px;
+			font-size: 18px;
+		}
+	}
+	@media screen and (max-width: 1281px){
+		.parte-superior{
+			width: 1145px;
+		}
+		.datos-estudiante-texto{
+			width: 1185px;
+		}
+		.datos-estudiante-texto-tabla{
+			width: 1185px;
+			font-size: 15px;
+		}
+	}
+	@media screen and (max-width: 1025px){
+		.parte-superior{
+			width: 905px;
+		}
+		.datos-estudiante-texto{
+			width: 925px;
+		}
+		.datos-estudiante-texto-tabla{
+			width: 925px;
+			font-size: 13px;
+		}
+	}
+	@media screen and (max-width: 800px){
+		.parte-superior{
+			width: 605px;
+		}
+		.datos-estudiante-texto{
+			width: 705px;
+		}
+		.datos-estudiante-texto-tabla{
+			width: 705px;
+			font-size: 11px;
+		}
+		label{
+			font-size: 11px;
+		}
+		.filas:focus~label, .filas:valid~label{
+			font-size: 15px;
+		}
+	}
